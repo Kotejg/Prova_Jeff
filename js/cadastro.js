@@ -1,7 +1,7 @@
 let cpfCliente = document.getElementById('form-cpf-cliente');
 
-cpfCliente.onblur = function () {
-    let regexCpf = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/;
+cpfCliente.oninput = function () {
+    let regexCpf = /^\d{3}\d{3}\d{3}\d{2}$/;
     let cpfError = document.querySelector(".error-cpf");
     let cpfOK = document.querySelector(".valid-cpf");
     if (regexCpf.test(cpfCliente.value)) {
@@ -16,8 +16,8 @@ cpfCliente.onblur = function () {
 let rgCliente = document.getElementById('form-rg');
 
 rgCliente.onblur = function () {
-    let regexRg = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/;
-    let rgError = document.querySelector(".msg-rg .error-rg");
+    let regexRg = /^\d{3}\d{3}\d{3}\d{2}$/;
+    let rgError = document.querySelector(".error-rg");
     let rgOK = document.querySelector(".valid-rg");
     if (regexRg.test(cpfCliente.value)) {
         rgOK.style.display = "block";
@@ -32,7 +32,7 @@ rgCliente.onblur = function () {
 let cepCliente = document.getElementById('form-cep');
 
 cepCliente.oninput = function () {
-    let regexCep = /^\d{5}-\d{3}$/;
+    let regexCep = /^\d{5}\d{3}$/;
     let cepOk = document.querySelector('.valid-cep');
     let cepError = document.querySelector('.error-cep');
     if (regexCep.test(cepCliente.value)) {
@@ -61,14 +61,9 @@ inputEmail.oninput = function () {
     }
 }
 
+let password = document.getElementById('form-senha');
 
-
-
-
-
-let password = document.getElementById('form-senha'); 
-
-password.oninput = function() {
+password.oninput = function () {
     let passwordOK = document.querySelector('.valid-pass');
     let passwordError = document.querySelector('.error-pass');
     if (password.value.length <= 8) {
@@ -77,6 +72,40 @@ password.oninput = function() {
     } else {
         passwordError.style.display = "none";
         passwordOK.style.display = "block";
-    }   
+    }
 }
 
+
+let confirmaPassword = document.getElementById('form-senha-confirma');
+
+
+confirmaPassword.oninput = function () {
+    let ConfirmaPasswordOk = document.querySelector('.valid-pass2');
+    let ConfirmaPasswordError = document.querySelector('.error-pass2');
+
+    if (password.value == confirmaPassword.value) {
+        ConfirmaPasswordOk.style.display = 'block';
+        ConfirmaPasswordError.style.display = 'none';
+    } else {
+        ConfirmaPasswordOk.style.display = 'none';
+        ConfirmaPasswordError.style.display = 'block';
+    }
+}
+
+
+let btnCadastrado = document.getElementById('btn-cadastro-ok');
+btnCadastrado.addEventListener('click', () => alert('Cadastro Realizado com Sucesso'))
+
+let nome = document.getElementById('form-Nome-cliente');
+nome.onchange = function () {
+    let regexLetras = /^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$/
+    let nomeError = document.querySelector('.error-nome'); 
+    let nomeOK = document.querySelector('.valid-nome'); 
+    if (regexLetras.test(nome.value)){
+        nomeOK.style.display = 'block'; 
+        nomeError.style.display = 'none';
+    } else {
+        nomeOK.style.display = 'none'; 
+        nomeError.style.display = 'block';
+    }
+}

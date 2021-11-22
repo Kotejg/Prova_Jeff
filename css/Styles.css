@@ -36,19 +36,22 @@ display: flex;
 } 
 
 @media (max-width: 576px){
-   
-    .mb-te{
-        display: flex;
-    }
+
     .form-link-cadastro{ 
         display: none;
-    } 
-
+    }  
+    .mobile{
+        display: block;
+    }
 }
 
-@media (min-width: 579){
+@media (min-width: 577){
 
     .form-link-cadastro{ 
         display: block;
-    } 
+    }  
+    .mobile{
+        display: none;
+    }
+  
 }
