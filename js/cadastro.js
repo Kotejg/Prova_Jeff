@@ -1,4 +1,5 @@
 let cpfCliente = document.getElementById('form-cpf-cliente');
+let campObriga = document.querySelector('.campo-obrigatorio')
 
 cpfCliente.oninput = function () {
     let regexCpf = /^\d{3}\d{3}\d{3}\d{2}$/;
@@ -6,10 +7,12 @@ cpfCliente.oninput = function () {
     let cpfOK = document.querySelector(".valid-cpf");
     if (regexCpf.test(cpfCliente.value)) {
         cpfOK.style.display = "block";
-        cpfError.style.display = "none";
+        cpfError.style.display = "none"; 
+        campObriga.style.display = "none"
     } else {
         cpfOK.style.display = "none";
         cpfError.style.display = "block";
+        campObriga.style.display = "none"
     }
 }
 
@@ -22,9 +25,11 @@ rgCliente.onblur = function () {
     if (regexRg.test(cpfCliente.value)) {
         rgOK.style.display = "block";
         rgError.style.display = "none";
+        campObriga.style.display = "none"
     } else {
         rgOK.style.display = "none";
         rgError.style.display = "block";
+        campObriga.style.display = "none"
     }
 }
 
@@ -38,10 +43,12 @@ cepCliente.oninput = function () {
     if (regexCep.test(cepCliente.value)) {
         cepOk.style.display = "block";
         cepError.style.display = "none";
+        campObriga.style.display = "none"
     } else {
         cepOk.style.display = "none";
         cepError.style.display = "block";
-        console.log('11')
+        campObriga.style.display = "none"
+
     }
 }
 
@@ -55,9 +62,11 @@ inputEmail.oninput = function () {
     if (regexMail.test(inputEmail.value)) {
         msgEmailError.style.display = "none";
         msgEmailOk.style.display = "block";
+        campObriga.style.display = "none"
     } else {
         msgEmailOk.style.display = "none";
         msgEmailError.style.display = "block";
+        campObriga.style.display = "none"
     }
 }
 
@@ -69,9 +78,11 @@ password.oninput = function () {
     if (password.value.length <= 8) {
         passwordError.style.display = "block";
         passwordOK.style.display = "none";
+        campObriga.style.display = "none"
     } else {
         passwordError.style.display = "none";
         passwordOK.style.display = "block";
+        campObriga.style.display = "none"
     }
 }
 
@@ -86,9 +97,11 @@ confirmaPassword.oninput = function () {
     if (password.value == confirmaPassword.value) {
         ConfirmaPasswordOk.style.display = 'block';
         ConfirmaPasswordError.style.display = 'none';
+        campObriga.style.display = "none"
     } else {
         ConfirmaPasswordOk.style.display = 'none';
         ConfirmaPasswordError.style.display = 'block';
+        campObriga.style.display = "none"
     }
 }
 
@@ -104,8 +117,10 @@ nome.onchange = function () {
     if (regexLetras.test(nome.value)){
         nomeOK.style.display = 'block'; 
         nomeError.style.display = 'none';
+        campObriga.style.display = "none"
     } else {
         nomeOK.style.display = 'none'; 
         nomeError.style.display = 'block';
+        campObriga.style.display = "none"
     }
 }
