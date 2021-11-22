@@ -9,11 +9,20 @@
 }
 
 .right{
-    background-color: rgb(240, 106, 106);
+    background-color: #F24130;
 }
 
 .login{
     display: flex;
 justify-content: center;
     align-items: center;
+}
+
+
+.form-link-cadastro{ 
+    display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   
 }
