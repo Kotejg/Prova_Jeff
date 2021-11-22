@@ -17,7 +17,7 @@ let rgCliente = document.getElementById('form-rg');
 
 rgCliente.onblur = function () {
     let regexRg = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/;
-    let rgError = document.querySelector(".error-rg");
+    let rgError = document.querySelector(".msg-rg .error-rg");
     let rgOK = document.querySelector(".valid-rg");
     if (regexRg.test(cpfCliente.value)) {
         rgOK.style.display = "block";
@@ -30,18 +30,34 @@ rgCliente.onblur = function () {
 
 
 let cepCliente = document.getElementById('form-cep');
- let cepOk = document.getElementById('.valid-cep');
-    let cepError = document.getElementById('.error-cep');
+
 cepCliente.oninput = function () {
-    let regexCep = /^\d{5}-\d{3}$/; 
-   
+    let regexCep = /^\d{5}-\d{3}$/;
+    let cepOk = document.querySelector('.valid-cep');
+    let cepError = document.querySelector('.error-cep');
     if (regexCep.test(cepCliente.value)) {
-    cepOk.style.display = "block";
-    cepError.style.display = "none";
+        cepOk.style.display = "block";
+        cepError.style.display = "none";
     } else {
-    // cepOk.style.display = "none"; 
-    // cepError.style.display = "block"; 
-    console.log('11')
+        cepOk.style.display = "none";
+        cepError.style.display = "block";
+        console.log('11')
+    }
+}
+
+let inputEmail = document.getElementById("form-email");
+
+inputEmail.oninput = function () {
+    var regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    let msgEmailError = document.querySelector(".invalid-email");
+    let msgEmailOk = document.querySelector(".valid-email");
+
+    if (regexMail.test(inputEmail.value)) {
+        msgEmailError.style.display = "none";
+        msgEmailOk.style.display = "block";
+    } else {
+        msgEmailOk.style.display = "none";
+        msgEmailError.style.display = "block";
     }
 }
 
@@ -50,19 +66,17 @@ cepCliente.oninput = function () {
 
 
 
+let password = document.getElementById('form-senha'); 
 
-// let password = document.getElementById('form-senha'); 
-
-// password.oninput = function() {
-//     console.log(password.lenth);
-//     let passwordOK = document.getElementById('.valid-pass');
-//     let passwordError = document.getElementById('.error-pass');
-//     if (password.lenth <= 8) {
-//         passwordError.style.display = "block";
-//         passwordOK.style.display = "none";
-//     } else {
-//         passwordError.style.display = "none";
-//         passwordOK.style.display = "block";
-//     }   
-// }
+password.oninput = function() {
+    let passwordOK = document.querySelector('.valid-pass');
+    let passwordError = document.querySelector('.error-pass');
+    if (password.value.length <= 8) {
+        passwordError.style.display = "block";
+        passwordOK.style.display = "none";
+    } else {
+        passwordError.style.display = "none";
+        passwordOK.style.display = "block";
+    }   
+}
 

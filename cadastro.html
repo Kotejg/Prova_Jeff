@@ -24,6 +24,8 @@
                     <div class="col-12 col-sm-6">
                         <label for="form-email" class="form-label">Email</label>
                         <input type="email" class="form-control" id="form-email">
+                        <span class="msg-email  msg-error invalid-email " style="display: none;">campo inválido</span>
+                        <span class="msg-email ok msg-success valid-email" style="display: none;">ok</span>
                     </div>
                     <div class="col-12 col-sm-6">
                         <label for="form-cpf-cliente" class="form-label">CPF</label>
@@ -48,8 +50,8 @@
                     <div class="col-12 col-sm-6">
                         <label for="form-rg" class="form-label">RG</label>
                         <input type="nome" class="form-control" id="form-rg">
-                        <span class="msg-cpf  msg-error error-rg" style="display: none;">rg inválido</span>
-                        <span class="msg-cpf  msg-success valid-rg" style="display: none;">ok</span>
+                        <span class="msg-rg  msg-error error-rg" style="display: none;">rg inválido</span>
+                        <span class="msg-rg  msg-success valid-rg" style="display: none;">ok</span>
                     </div>
                     <div class="col-12 col-sm-6">
                         <label for="form-senha" class="form-label">Senha</label>
@@ -66,15 +68,15 @@
                     <button type="submit" class="btn btn-danger mt-3">Cadastrar</button>
                 </form>
             </div>
-            <div class="col-12 col-sm-6">
-                <form class="form-link-cadastro mt-5">
-                    <h1> Olá</h1>
+            <div class="col-sm-6 right mb-5">
+                <form class="form-link-cadastro mt-5 mb-5">
+                    <h1> Já Possui Cadastro </h1>
                     <p>
-                    <h3>Não Possui Cadastro?</h3>
+                    <h3>Faça Login, clicando abaixo</h3>
                     </p>
 
-                    <a href="/cadastro.html"><button type="button"
-                            class="btn btn-primary btn-lg btn-cadastar">Cadastrar</button></a>
+                    <a href="/index.html"><button type="button"
+                            class="btn btn-primary btn-lg btn-cadastar mb-4">Faça seu Login</button></a>
                 </form>
             </div>
         </div>

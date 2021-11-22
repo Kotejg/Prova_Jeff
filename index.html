@@ -29,24 +29,25 @@
                 </nav>
                 <div class='row'>
                     <form>
-                        <div class="mb-3">
+                        <div class="col-12 col-sm-12">
                             <label for="form-email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="form-email">
+                            <span class="msg-email  msg-error invalid-email " style="display: none;">campo inválido</span>
+                            <span class="msg-email ok msg-success valid-email" style="display: none;">ok</span>
                         </div>
-                        <div class="mb-3">
+                        <div class="col-12 col-sm-12">
                             <label for="form-senha" class="form-label">Senha</label>
-                            <input type="text" class="form-control" id="form-senha">
+                            <input type="password" class="form-control" id="form-senha">
+                            <span class="msg-pass  msg-error error-pass" style="display: none;">Senha Fraca, deve conter no mimino 8 caracter</span>
+                            <span class="msg-pass  msg-success valid-pass" style="display: none;">ok</span>
                         </div>
-                        <div class="mb-3 form-check">
+                        <div class="mb-3 ">
                             <a href="#">Esqueceu sua senha?</a>
                         </div>
-                        <button type="submit" class="btn btn-danger">Entrar</button>
-                        
-                        <form>
-                            <p class='d-none'>ou</p>
-                            <a href="/cadastro.html"><button type="button"
-                            class="btn btn-primary btn-lg btn-cadastar d-none">Cadastrar</button></a>
-                        </form>
+                        <button type="submit" class="btn btn-danger btn-lg">Entrar</button>
+                            <p class='mb-te d-none'>ou</p>
+                            <a href="/cadastro.html  mb-te d-none"><button type="button"
+                            class="btn btn-primary btn-lg btn-cadastar mb-te d-none">Cadastrar</button></a>
                         
                     </form>
                 </div>
@@ -59,7 +60,7 @@
                     </p>
 
                     <a href="/cadastro.html"><button type="button"
-                            class="btn btn-primary btn-lg btn-cadastar">Cadastrar</button></a>
+                            class="btn btn-primary btn-lg btn-cadastar ">Cadastrar</button></a>
                 </form>
             </div>
         </div>
